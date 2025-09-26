@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E&G - Eco and Green</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">
+          <div class="logo-icon"><img src="/asset/logo.jpg" alt="" /></div>
+          <span style="font-weight: bold; font-size: 18px">E&G</span>
+        </div>
+
+        <nav class="nav">
+          <a href="#" class="nav-item active">Home</a>
+          <a href="#" class="nav-item">Shop</a>
+          <a href="#" class="nav-item">Work Shop</a>
+          <a href="#" class="nav-item">Blog</a>
+          <a href="#" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-box"
+            placeholder="Search vegetable, fruits etc"
+          />
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <div class="hero-carousel">
+        <div
+          class="hero-slide active"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('asset/sayur-buah.jpg');
+          "
+        >
+          <h1>Eco and<br />Green</h1>
+          <p>
+            E&G (Eco and Green) is an agriculture-based e-commerce platform
+            established in 2025 with one mission to connect the network of
+            farmers with the food needs of families through a fair, transparent,
+            and sustainable system.
+          </p>
+          <button class="shop-btn" onclick="scrollToProducts()">
+            Shop Now
+          </button>
+        </div>
+        <div
+          class="hero-slide"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('asset/brokoli.jpg');
+          "
+        >
+          <h1>Fresh & Local</h1>
+          <p>
+            Dapatkan sayur dan buah segar langsung dari petani lokal dengan
+            harga terbaik dan pengiriman cepat.
+          </p>
+          <button class="shop-btn" onclick="scrollToProducts()">
+            Shop Now
+          </button>
+        </div>
+        <div
+          class="hero-slide"
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4),
+                rgba(0, 0, 0, 0.4)
+              ),
+              url('asset/buah.jpg');
+          "
+        >
+          <h1>Healthy Living</h1>
+          <p>
+            Pilihan sehat untuk keluarga, dukung pertanian berkelanjutan dan
+            konsumsi pangan organik setiap hari.
+          </p>
+          <button class="shop-btn" onclick="scrollToProducts()">
+            Shop Now
+          </button>
+        </div>
+        <div class="hero-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Category</h2>
+          <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="categories-grid">
+          <div class="category-item" onclick="filterCategory('sayuran')">
+            <img
+              src="asset/sayur.jpg"
+              alt="Sayuran"
+              class="category-icon-img"
+            />
+            <div class="category-name">Sayuran</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('buah')">
+            <img src="asset/buah.jpg" alt="Buah" class="category-icon-img" />
+            <div class="category-name">Buah</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('rempah')">
+            <img src="asset/jahe.jpg" alt="Rempah" class="category-icon-img" />
+            <div class="category-name">Rempah-rempah</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('umbi')">
+            <img src="asset/umbi.jpg" alt="Umbi" class="category-icon-img" />
+            <div class="category-name">Umbi-umbian</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('kacang')">
+            <img
+              src="asset/kacang.jpg"
+              alt="Kacang"
+              class="category-icon-img"
+            />
+            <div class="category-name">Kacang-kacangan</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('olahan')">
+            <img
+              src="asset/gandum.jpg"
+              alt="Olahan"
+              class="category-icon-img"
+            />
+            <div class="category-name">Olahan</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('bibit')">
+            <img src="asset/sekam.jpg" alt="Bibit" class="category-icon-img" />
+            <div class="category-name">Bibit</div>
+          </div>
+          <div class="category-item" onclick="filterCategory('media')">
+            <img
+              src="asset/pupuk.jpg"
+              alt="Media Tanam"
+              class="category-icon-img"
+            />
+            <div class="category-name">Media Tanam</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="section" id="products">
+        <div class="section-header">
+          <h2 class="section-title">Sayuran</h2>
+          <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="products-grid">
+          <div class="product-card" data-category="sayuran">
+            <div class="product-image">
+              <img src="asset/tomat.jpg" alt="Tomat" />
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.4</span>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Tomat', 'Rp 15.800/kg')"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Tomat</div>
+              <div class="product-price">Rp 15.800/kg</div>
+            </div>
+          </div>
+          <div class="product-card" data-category="sayuran">
+            <div class="product-image">
+              <img src="asset/sayur2.jpg" alt="Selada Air" />
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.4</span>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Selada Air', 'Rp 14.500/kg')"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Selada Air</div>
+              <div class="product-price">Rp 14.500/kg</div>
+            </div>
+          </div>
+          <div class="product-card" data-category="sayuran">
+            <div class="product-image">
+              <img src="asset/kangkung.jpg" alt="Kangkung" />
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.4</span>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Kangkung', 'Rp 8.000/kg')"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Kangkung</div>
+              <div class="product-price">Rp 8.000/kg</div>
+            </div>
+          </div>
+          <div class="product-card" data-category="sayuran">
+            <div class="product-image">
+              <img src="asset/brokoli.jpg" alt="Brokoli" />
+              <div class="rating">
+                <span class="star">★</span>
+                <span>4.4</span>
+              </div>
+              <button
+                class="add-btn"
+                onclick="addToCart('Brokoli', 'Rp 18.000/kg')"
+              >
+                +
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-name">Brokoli</div>
+              <div class="product-price">Rp 18.000/kg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="bottom-nav">
+        <a href="#" class="nav-icon active">
+          <div class="nav-icon-symbol">🏠</div>
+        </a>
+        <a href="#" class="nav-icon">
+          <div class="nav-icon-symbol">🔍</div>
+        </a>
+        <div class="cart-icon" onclick="showCart()">🛒</div>
+        <a href="#" class="nav-icon">
+          <div class="nav-icon-symbol">🥬</div>
+        </a>
+        <a href="#" class="nav-icon">
+          <div class="nav-icon-symbol">👤</div>
+        </a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
